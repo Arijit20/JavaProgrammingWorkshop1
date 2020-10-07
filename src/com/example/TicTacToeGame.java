@@ -39,6 +39,19 @@ public class TicTacToeGame {
 			System.out.println(board[i]+"  "+board[i+1]+"  "+board[i+2]);
 		}
 	}
+	public void move() {
+		int flag = 0;
+		while(flag == 0) {
+		System.out.println("Enter position : ");
+		int position = in.nextInt();
+		if(board[position] == ' ' && position >= 1 && position < 10) {
+			System.out.println("Your Mark has been placed at position "+position);
+			flag = 1;
+		}
+		else
+			System.out.println("This Position is nit vacant");
+	}
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
 		TicTacToeGame game = new TicTacToeGame();
