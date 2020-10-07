@@ -33,9 +33,16 @@ public class TicTacToeGame {
 		System.out.println("Player :" + player);
 		System.out.println("Computer : " +computer);
 }
+	public void showBoard() {
+		for(int i =1; i < 10 ; i= i+3) {
+			System.out.println("--------------");
+			System.out.println(board[1]+"  "+board[i+1]+"  "+board[i+2]);
+		}
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
 		TicTacToeGame game = new TicTacToeGame();
 		game.chooseLetter();
+		game.showBoard();
 	}
 }
