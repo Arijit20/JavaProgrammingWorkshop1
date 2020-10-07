@@ -34,7 +34,7 @@ public class TicTacToeGame {
 }
 	public void showBoard() {
 		for(int i =1; i < 10 ; i= i+3) {
-			System.out.println("--------------");
+			System.out.println("-------");
 			System.out.println(board[i]+"  "+board[i+1]+"  "+board[i+2]);
 		}
 	}
@@ -56,6 +56,8 @@ public class TicTacToeGame {
 		System.out.println("Welcome to the game");
 		TicTacToeGame game = new TicTacToeGame();
 		game.chooseLetter();
+		game.showBoard();
+		game.move();
 		game.showBoard();
 		game.move();
 		game.showBoard();
