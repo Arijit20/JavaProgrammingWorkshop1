@@ -1,4 +1,5 @@
 package com.example;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TicTacToeGame {
@@ -8,9 +9,7 @@ public class TicTacToeGame {
 	Scanner in = new Scanner(System.in);
 	
 	public char[] initializeBoard() {
-		for (char ch : board) {
-			board[ch] = ' ';
-		}
+		Arrays.fill(board, ' ');
 		return board;
 	}
 
@@ -18,7 +17,7 @@ public class TicTacToeGame {
 		initializeBoard();
 	}
 	public void chooseLetter() {
-		System.out.println("Enter either x or o what yoy want to choose");
+		System.out.println("Enter either x or o what you want to choose");
 		int flag = 0;
 		while(flag == 0) {
 		char option = in.next().charAt(0);
@@ -46,6 +45,7 @@ public class TicTacToeGame {
 		int position = in.nextInt();
 		if(board[position] == ' ' && position >= 1 && position < 10) {
 			System.out.println("Your Mark has been placed at position "+position);
+			board[position] = player;
 			flag = 1;
 		}
 		else
@@ -56,6 +56,8 @@ public class TicTacToeGame {
 		System.out.println("Welcome to the game");
 		TicTacToeGame game = new TicTacToeGame();
 		game.chooseLetter();
+		game.showBoard();
+		game.move();
 		game.showBoard();
 	}
 }
