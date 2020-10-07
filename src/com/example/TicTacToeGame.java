@@ -36,7 +36,7 @@ public class TicTacToeGame {
 	public void showBoard() {
 		for(int i =1; i < 10 ; i= i+3) {
 			System.out.println("--------------");
-			System.out.println(board[1]+"  "+board[i+1]+"  "+board[i+2]);
+			System.out.println(board[i]+"  "+board[i+1]+"  "+board[i+2]);
 		}
 	}
 	public static void main(String[] args) {
