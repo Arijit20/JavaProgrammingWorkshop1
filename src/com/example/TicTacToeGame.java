@@ -6,7 +6,7 @@ public class TicTacToeGame {
 
 	private char[] board = new char[10];
 	private char player, computer;
-	Scanner in = new Scanner(System.in);
+	static Scanner in = new Scanner(System.in);
 	
 	public char[] initializeBoard() {
 		Arrays.fill(board, ' ');
@@ -52,14 +52,33 @@ public class TicTacToeGame {
 			System.out.println("This Position is nit vacant");
 	}
 	}
+	public boolean toss() {
+		int toss = (int)Math.floor(Math.random() * 10) % 2;
+		if(toss == 0) {
+			System.out.println("You are giving first move");
+			chooseLetter();
+		return true;
+		}
+		else {
+			System.out.println("Computer is giving first move");
+		return false;
+	}
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
 		TicTacToeGame game = new TicTacToeGame();
-		game.chooseLetter();
+		int play = 1;
+		if(game.toss()) {
+		while(play == 1) {
+		System.out.println("To Play enter 1");
+		System.out.println("To exit enter 2");
+		play = in.nextInt();
+		if(play == 1) {
 		game.showBoard();
 		game.move();
 		game.showBoard();
-		game.move();
-		game.showBoard();
+		}
+		}
+		}
 	}
 }
