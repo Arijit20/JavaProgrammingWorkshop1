@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TicTacToeGame {
 
 	private char[] board = new char[10];
-	private char player, computer;
+	static private char player, computer;
 	static Scanner in = new Scanner(System.in);
 	
 	public char[] initializeBoard() {
@@ -32,6 +32,19 @@ public class TicTacToeGame {
 		System.out.println("Player :" + player);
 		System.out.println("Computer : " +computer);
 }
+	public boolean winCondition(char player) {
+		if((board[1] ==player && board[2] == player && board[3] == player) ||
+				(board[4] ==player && board[5] ==player && board[6] == player ) ||
+				(board[7] == player && board[8] == player &&board[9] == player )
+				||(board[1] == player && board[5] == player && board[9] == player ) ||
+				(board[3] == player && board[5] == player && board[7] == player ) ||
+				(board[1] == player && board[4] == player && board[7] == player  )
+				|| (board[2] == player && board[2] == player && board[8] == player ) ||
+				(board[3] == player && board[2] == player && board[9] == player ))
+			return true;
+		else
+			return false;
+	}
 	public void showBoard() {
 		for(int i =1; i < 10 ; i= i+3) {
 			System.out.println("-------");
@@ -74,9 +87,15 @@ public class TicTacToeGame {
 		System.out.println("To exit enter 2");
 		play = in.nextInt();
 		if(play == 1) {
+			if(game.winCondition(player)) {
+				break;
+			}
 		game.showBoard();
 		game.move();
 		game.showBoard();
+		if(game.winCondition(player)) {
+			break;
+		}
 		}
 		}
 		}
