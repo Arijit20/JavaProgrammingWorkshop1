@@ -40,11 +40,13 @@ public class TicTacToeGame {
 				(board[3] == player && board[5] == player && board[7] == player ) ||
 				(board[1] == player && board[4] == player && board[7] == player  )
 				|| (board[2] == player && board[2] == player && board[8] == player ) ||
-				(board[3] == player && board[2] == player && board[9] == player ))
-			return true;
+				(board[3] == player && board[2] == player && board[9] == player )) {
+			System.out.println("congrats");
+			return true;}
 		else
 			return false;
 	}
+	
 	public void showBoard() {
 		for(int i =1; i < 10 ; i= i+3) {
 			System.out.println("-------");
