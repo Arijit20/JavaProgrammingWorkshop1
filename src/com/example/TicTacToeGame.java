@@ -140,15 +140,22 @@ public class TicTacToeGame {
 			return 7;
 		else if(isAvailable(9))
 			return 9;
+		else 
+			return midOrSidePosition();
+	}
+
+	public int midOrSidePosition() {
+		if(isAvailable(5))
+			return 5;
 		else {
 			int flag = 0, position = 0;
 			while(flag == 0) {
-				 position = ((int)Math.floor(Math.random()* 10) % 9) + 1;
+				position = ((int)Math.floor(Math.random()* 10) % 9) + 1;
 				if(isAvailable(position))
 					flag = 1;
 			}
 			return position;
-		}	
+		}
 	}
 
 	public void computerMove() {
