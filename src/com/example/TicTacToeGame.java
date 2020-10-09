@@ -209,6 +209,7 @@ public class TicTacToeGame {
 		System.out.println("To exit enter 2");
 		 play = in.nextInt();
 		if (play == 1) {
+			game.showBoard();
 			if (game.toss()) {
 				game.chooseLetter();
 				game.playerTurn();
