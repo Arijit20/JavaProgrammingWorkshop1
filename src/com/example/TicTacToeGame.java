@@ -202,10 +202,12 @@ public class TicTacToeGame {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
+		int play = 1;
+		while(play == 1) {
 		TicTacToeGame game = new TicTacToeGame();
 		System.out.println("To play enter 1");
 		System.out.println("To exit enter 2");
-		int play = in.nextInt();
+		 play = in.nextInt();
 		if (play == 1) {
 			if (game.toss()) {
 				game.chooseLetter();
@@ -214,6 +216,8 @@ public class TicTacToeGame {
 				game.chooseLetter();
 				game.computerTurn();
 			}
+			}
 		}
+		System.out.println("Thnak you for playing");
 	}
 }
